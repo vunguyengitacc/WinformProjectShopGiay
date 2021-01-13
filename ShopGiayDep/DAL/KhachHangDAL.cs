@@ -43,7 +43,6 @@ namespace ShopGiayDep.DAL
 
         internal static int delete(string text)
         {
-            DBContext db = new DBContext();
             KhachHang temp = db.KhachHangs.FirstOrDefault(val => val.MaKH == text);
             if (temp == null)
                 return 1;//1 la hoa don khong ton tai
