@@ -48,9 +48,10 @@ namespace ShopGiayDep.GUI.QuanLyBanHang
             this.label7 = new System.Windows.Forms.Label();
             this.txtMaHD = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnTim = new System.Windows.Forms.Button();
             this.pnlTitle = new System.Windows.Forms.Panel();
             this.btnXoa = new System.Windows.Forms.Button();
+            this.btnRefreshList = new System.Windows.Forms.Button();
+            this.btnTim = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThongTinChiTietHD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThongTinHoaDon)).BeginInit();
@@ -85,7 +86,7 @@ namespace ShopGiayDep.GUI.QuanLyBanHang
             this.txtGhiChu.Multiline = true;
             this.txtGhiChu.Name = "txtGhiChu";
             this.txtGhiChu.ReadOnly = true;
-            this.txtGhiChu.Size = new System.Drawing.Size(330, 62);
+            this.txtGhiChu.Size = new System.Drawing.Size(308, 62);
             this.txtGhiChu.TabIndex = 1;
             // 
             // dgvThongTinChiTietHD
@@ -210,6 +211,7 @@ namespace ShopGiayDep.GUI.QuanLyBanHang
             // pnlKhachHang
             // 
             this.pnlKhachHang.BackColor = System.Drawing.Color.OldLace;
+            this.pnlKhachHang.Controls.Add(this.btnTim);
             this.pnlKhachHang.Controls.Add(this.txtTongTien);
             this.pnlKhachHang.Controls.Add(this.label4);
             this.pnlKhachHang.Controls.Add(this.txtMaKH);
@@ -260,7 +262,6 @@ namespace ShopGiayDep.GUI.QuanLyBanHang
             this.txtMaHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaHD.Location = new System.Drawing.Point(147, 22);
             this.txtMaHD.Name = "txtMaHD";
-            this.txtMaHD.ReadOnly = true;
             this.txtMaHD.Size = new System.Drawing.Size(181, 26);
             this.txtMaHD.TabIndex = 45;
             // 
@@ -274,21 +275,6 @@ namespace ShopGiayDep.GUI.QuanLyBanHang
             this.label1.Size = new System.Drawing.Size(304, 36);
             this.label1.TabIndex = 0;
             this.label1.Text = "Danh Sách Hóa Đơn";
-            // 
-            // btnTim
-            // 
-            this.btnTim.BackColor = System.Drawing.Color.Navy;
-            this.btnTim.FlatAppearance.BorderSize = 0;
-            this.btnTim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTim.ForeColor = System.Drawing.Color.White;
-            this.btnTim.Location = new System.Drawing.Point(395, 323);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(174, 31);
-            this.btnTim.TabIndex = 45;
-            this.btnTim.Text = "Làm Mới Danh Sách";
-            this.btnTim.UseVisualStyleBackColor = false;
-            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // pnlTitle
             // 
@@ -315,6 +301,36 @@ namespace ShopGiayDep.GUI.QuanLyBanHang
             this.btnXoa.UseVisualStyleBackColor = false;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
+            // btnRefreshList
+            // 
+            this.btnRefreshList.BackColor = System.Drawing.Color.Navy;
+            this.btnRefreshList.FlatAppearance.BorderSize = 0;
+            this.btnRefreshList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefreshList.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefreshList.ForeColor = System.Drawing.Color.White;
+            this.btnRefreshList.Location = new System.Drawing.Point(561, 345);
+            this.btnRefreshList.Name = "btnRefreshList";
+            this.btnRefreshList.Size = new System.Drawing.Size(174, 31);
+            this.btnRefreshList.TabIndex = 52;
+            this.btnRefreshList.Text = "Làm Mới Danh Sách";
+            this.btnRefreshList.UseVisualStyleBackColor = false;
+            this.btnRefreshList.Click += new System.EventHandler(this.btnRefreshList_Click);
+            // 
+            // btnTim
+            // 
+            this.btnTim.BackColor = System.Drawing.Color.Navy;
+            this.btnTim.FlatAppearance.BorderSize = 0;
+            this.btnTim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTim.ForeColor = System.Drawing.Color.White;
+            this.btnTim.Location = new System.Drawing.Point(274, 22);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(54, 26);
+            this.btnTim.TabIndex = 62;
+            this.btnTim.Text = "Tìm";
+            this.btnTim.UseVisualStyleBackColor = false;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
+            // 
             // FormDanhSachHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -322,13 +338,13 @@ namespace ShopGiayDep.GUI.QuanLyBanHang
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(764, 511);
+            this.Controls.Add(this.btnRefreshList);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.dgvThongTinChiTietHD);
             this.Controls.Add(this.btnCapNhat);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgvThongTinHoaDon);
             this.Controls.Add(this.pnlKhachHang);
-            this.Controls.Add(this.btnTim);
             this.Controls.Add(this.pnlTitle);
             this.Controls.Add(this.btnXoa);
             this.Name = "FormDanhSachHoaDon";
@@ -366,8 +382,9 @@ namespace ShopGiayDep.GUI.QuanLyBanHang
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtMaHD;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnTim;
         private System.Windows.Forms.Panel pnlTitle;
         private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Button btnRefreshList;
+        private System.Windows.Forms.Button btnTim;
     }
 }

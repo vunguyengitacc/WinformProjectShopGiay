@@ -14,12 +14,13 @@ namespace ShopGiayDep.GUI.QuanLyBanHang
     public partial class FormNhapKhachHang : Form
     {
         public delegate void fillTextboxMaKH(TextBox txt);
-        public event fillTextboxMaKH fillEvent;
+        public fillTextboxMaKH delegateFillMaKH;
         public FormNhapKhachHang()
         {
             InitializeComponent();
             KhachHangBUS.getMaKHMoi(txtMaKH);
             txtMaKH.ReadOnly = true;
+            delegateFillMaKH = new fillTextboxMaKH(fillTxtBox);
         }
 
         private void btnCommit_Click(object sender, EventArgs e)
@@ -42,7 +43,6 @@ namespace ShopGiayDep.GUI.QuanLyBanHang
             }
             if (resul == 0)
                 MessageBox.Show("Thêm thành công");
-            this.fillEvent += fillTxtBox;
             this.Close();
         }
 

@@ -20,6 +20,16 @@ namespace ShopGiayDep.DAL
             return new ChucVuDAL() { MaCV = input.MaCV, TenCV = input.TenCV };
         }
 
+        internal static void init()
+        {
+            if (db.ChucVus.ToList().Count == 0)
+            {
+                ChucVu temp = new ChucVu() { MaCV = "CV0", TenCV = "Không Xác Định" };
+                db.ChucVus.Add(temp);
+                db.SaveChanges();
+            }
+        }
+
         internal static List<ChucVuDAL> getListChucVu()
         {
             List<ChucVu> lstCTHD = db.ChucVus.ToList();

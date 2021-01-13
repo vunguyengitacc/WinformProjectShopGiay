@@ -17,9 +17,12 @@ namespace ShopGiayDep.BUS
                 return 1;
             maSP = maSP.Trim();
             maSP = maSP.ToUpper();
-            if (soLuong == "" || soLuong == "0")
+            int sl;
+            if (!Int32.TryParse(soLuong, out sl))
+                return 2;// 2 la loi nhap sai dinh dang
+            if (sl == 0)
                 return 1;//1 la chua nhap day du
-            CTHDDAL.insert(maSP, Int32.Parse(soLuong), maHoaDon);
+            CTHDDAL.insert(maSP, sl, maHoaDon);
             return 0;
         }
 

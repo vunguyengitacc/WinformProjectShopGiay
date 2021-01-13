@@ -44,5 +44,23 @@ namespace ShopGiayDep.GUI.QuanLyKho
 
             SanPhamBUS.getMaSPMoi(txtMaHang);
         }
+
+        private void btnThemThuongHieu_Click(object sender, EventArgs e)
+        {
+            int result = ThuongHieuBUS.insert(txtTenThuongHieu.Text);
+            if(result == 1)
+            {
+                MessageBox.Show("Vui lòng nhập tên thương hiệu","Lỗi Nhập");
+                return;
+            }    
+            if(result == 2)
+            {
+                MessageBox.Show("Tên Thương Hiệu đã tồn tại", "Lỗi Nhập");
+                return;
+            }
+            else
+                MessageBox.Show("Thêm thành công", "Thông Báo");
+            ThuongHieuBUS.fillingCombobox(cmbThuongHieu);
+        }
     }
 }

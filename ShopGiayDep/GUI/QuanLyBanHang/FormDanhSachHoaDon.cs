@@ -16,15 +16,10 @@ namespace ShopGiayDep.GUI.QuanLyBanHang
         public FormDanhSachHoaDon()
         {
             InitializeComponent();
-            HoaDonBUS.bindingDataGridView(dgvThongTinHoaDon);
+            HoaDonBUS.bindingDataGridView(dgvThongTinHoaDon, "");
             CTHDBUS.bindingDataGridView(dgvThongTinChiTietHD, "");
         }
 
-        private void btnTim_Click(object sender, EventArgs e)
-        {
-            HoaDonBUS.bindingDataGridView(dgvThongTinHoaDon);
-            CTHDBUS.bindingDataGridView(dgvThongTinChiTietHD, "");
-        }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
@@ -40,7 +35,7 @@ namespace ShopGiayDep.GUI.QuanLyBanHang
                 return;
             }
             MessageBox.Show("Xóa thành công", "Thông Báo");
-            HoaDonBUS.bindingDataGridView(dgvThongTinHoaDon);
+            HoaDonBUS.bindingDataGridView(dgvThongTinHoaDon, "");
         }
 
         private void dgvThongTinHoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -67,7 +62,22 @@ namespace ShopGiayDep.GUI.QuanLyBanHang
                 MessageBox.Show("Vui lòng nhập đúng định dạng số điện thoại", "Thông báo");
             else if (result == 0)
                 MessageBox.Show("Cập nhật thành công", "Thông báo");
-            HoaDonBUS.bindingDataGridView(dgvThongTinHoaDon);
+            HoaDonBUS.bindingDataGridView(dgvThongTinHoaDon, "");
+        }
+
+
+        private void btnRefreshList_Click(object sender, EventArgs e)
+        {
+            HoaDonBUS.bindingDataGridView(dgvThongTinHoaDon, "");
+            CTHDBUS.bindingDataGridView(dgvThongTinChiTietHD, "");
+        }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            if (!HoaDonBUS.bindingDataGridView(dgvThongTinHoaDon, txtMaHD.Text))
+                MessageBox.Show("Không tìm thấy hóa đơn", "Lỗi");
+            else
+                CTHDBUS.bindingDataGridView(dgvThongTinChiTietHD, txtMaHD.Text);
         }
     }
 }

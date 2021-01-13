@@ -7,14 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ShopGiayDep.BUS;
 
 namespace ShopGiayDep.GUI.Admin
 {
     public partial class FormAdmin : Form
     {
+
+        static string trungChuyen;
         public FormAdmin()
         {
             InitializeComponent();
+        }
+
+        public FormAdmin(string text)
+        {
+            InitializeComponent();
+            trungChuyen = text;
         }
 
         private void btnQuanLyTaiKhoan_Click(object sender, EventArgs e)
@@ -30,29 +39,19 @@ namespace ShopGiayDep.GUI.Admin
                     return;
                 }
             }
-            addFormToPanel(1);
-        }
 
-        private void addFormToPanel(int choice)//Ham goi Form len
-        {
-            Form frm;
-            switch (choice)
-            {
-                case 1:
-                    frm = new FormQuanLyTaiKhoan();
-                    break;
-                case 2:
-                    frm = new FormThemTaiKhoan();
-                    break;
-                default:
-                    return;
-            }
+            FormQuanLyTaiKhoan frm = new FormQuanLyTaiKhoan(trungChuyen);
+            
             frm.Dock = DockStyle.Fill;
             frm.TopLevel = false;
             frm.FormBorderStyle = 0;
             pnlNoiDung.Controls.Add(frm);
             frm.Show();
             frm.BringToFront();
+        }
+        public void hideFatherEvent(FormAdmin frm)
+        {
+            frm.Hide();
         }
 
         private void btnTaoTaiKhoan_Click(object sender, EventArgs e)
@@ -61,14 +60,21 @@ namespace ShopGiayDep.GUI.Admin
             pnlNoiDung.BringToFront();
             foreach (Form frmItem in pnlNoiDung.Controls)
             {
-                if (frmItem is FormQuanLyTaiKhoan)
+                if (frmItem is FormThemTaiKhoan)
                 {
                     pnlNoiDung.BringToFront();
                     frmItem.BringToFront();
                     return;
                 }
             }
-            addFormToPanel(2);
+
+            FormThemTaiKhoan frm = new FormThemTaiKhoan();
+            frm.Dock = DockStyle.Fill;
+            frm.TopLevel = false;
+            frm.FormBorderStyle = 0;
+            pnlNoiDung.Controls.Add(frm);
+            frm.Show();
+            frm.BringToFront();
         }
     }
 }

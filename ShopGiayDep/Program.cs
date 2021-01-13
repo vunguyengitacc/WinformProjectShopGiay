@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ShopGiayDep.GUI;
 
 namespace ShopGiayDep
 {
@@ -16,7 +17,7 @@ namespace ShopGiayDep
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FormDangNhap());
         }
     }
 }

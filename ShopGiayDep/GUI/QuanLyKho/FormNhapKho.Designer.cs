@@ -29,7 +29,6 @@ namespace ShopGiayDep.GUI.QuanLyKho
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
             this.pnlHang2 = new System.Windows.Forms.Panel();
             this.cmbThuongHieu = new System.Windows.Forms.ComboBox();
             this.lblThuongHieu = new System.Windows.Forms.Label();
@@ -53,24 +52,19 @@ namespace ShopGiayDep.GUI.QuanLyKho
             this.txtGiaBan = new System.Windows.Forms.TextBox();
             this.txtGiaVon = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnThemThuongHieu = new System.Windows.Forms.Button();
+            this.txtTenThuongHieu = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlHang2.SuspendLayout();
             this.pnlTitle.SuspendLayout();
             this.pnlHang1.SuspendLayout();
             this.pnlHang3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button2
-            // 
-            this.button2.AutoSize = true;
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(483, 295);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(273, 221);
-            this.button2.TabIndex = 55;
-            this.button2.UseVisualStyleBackColor = false;
             // 
             // pnlHang2
             // 
@@ -163,7 +157,7 @@ namespace ShopGiayDep.GUI.QuanLyKho
             this.pnlTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitle.Location = new System.Drawing.Point(0, 0);
             this.pnlTitle.Name = "pnlTitle";
-            this.pnlTitle.Size = new System.Drawing.Size(756, 50);
+            this.pnlTitle.Size = new System.Drawing.Size(747, 50);
             this.pnlTitle.TabIndex = 48;
             // 
             // btnGetMaSPMoi
@@ -320,25 +314,80 @@ namespace ShopGiayDep.GUI.QuanLyKho
             this.label5.TabIndex = 16;
             this.label5.Text = "Giá Vốn";
             // 
-            // button1
-            // 
-            this.button1.AutoSize = true;
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(483, 69);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(273, 203);
-            this.button1.TabIndex = 54;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Gray;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 560);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(756, 39);
+            this.panel2.Size = new System.Drawing.Size(747, 39);
             this.panel2.TabIndex = 52;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.OldLace;
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.txtTenThuongHieu);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.btnThemThuongHieu);
+            this.panel1.Location = new System.Drawing.Point(483, 69);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(261, 97);
+            this.panel1.TabIndex = 56;
+            // 
+            // btnThemThuongHieu
+            // 
+            this.btnThemThuongHieu.BackColor = System.Drawing.Color.DarkBlue;
+            this.btnThemThuongHieu.FlatAppearance.BorderSize = 0;
+            this.btnThemThuongHieu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThemThuongHieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemThuongHieu.ForeColor = System.Drawing.Color.White;
+            this.btnThemThuongHieu.Location = new System.Drawing.Point(57, 63);
+            this.btnThemThuongHieu.Name = "btnThemThuongHieu";
+            this.btnThemThuongHieu.Size = new System.Drawing.Size(184, 28);
+            this.btnThemThuongHieu.TabIndex = 54;
+            this.btnThemThuongHieu.Text = "Thêm";
+            this.btnThemThuongHieu.UseVisualStyleBackColor = false;
+            this.btnThemThuongHieu.Click += new System.EventHandler(this.btnThemThuongHieu_Click);
+            // 
+            // txtTenThuongHieu
+            // 
+            this.txtTenThuongHieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenThuongHieu.Location = new System.Drawing.Point(57, 29);
+            this.txtTenThuongHieu.Name = "txtTenThuongHieu";
+            this.txtTenThuongHieu.Size = new System.Drawing.Size(184, 26);
+            this.txtTenThuongHieu.TabIndex = 55;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.label7.Location = new System.Drawing.Point(3, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(160, 20);
+            this.label7.TabIndex = 56;
+            this.label7.Text = "Thêm Thương Hiệu";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.label8.Location = new System.Drawing.Point(12, 32);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(39, 20);
+            this.label8.TabIndex = 57;
+            this.label8.Text = "Tên";
+            // 
+            // button1
+            // 
+            this.button1.Image = global::ShopGiayDep.Properties.Resources._6;
+            this.button1.Location = new System.Drawing.Point(483, 205);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(261, 311);
+            this.button1.TabIndex = 57;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // FormNhapKho
             // 
@@ -347,13 +396,13 @@ namespace ShopGiayDep.GUI.QuanLyKho
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(764, 511);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlHang2);
             this.Controls.Add(this.pnlTitle);
             this.Controls.Add(this.pnlHang1);
             this.Controls.Add(this.btnXacNhanThem);
             this.Controls.Add(this.pnlHang3);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel2);
             this.Name = "FormNhapKho";
             this.Text = "FormNhapKho";
@@ -365,14 +414,13 @@ namespace ShopGiayDep.GUI.QuanLyKho
             this.pnlHang1.PerformLayout();
             this.pnlHang3.ResumeLayout(false);
             this.pnlHang3.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel pnlHang2;
         private System.Windows.Forms.ComboBox cmbThuongHieu;
         private System.Windows.Forms.Label lblThuongHieu;
@@ -396,7 +444,12 @@ namespace ShopGiayDep.GUI.QuanLyKho
         private System.Windows.Forms.TextBox txtGiaBan;
         private System.Windows.Forms.TextBox txtGiaVon;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnThemThuongHieu;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtTenThuongHieu;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button1;
     }
 }

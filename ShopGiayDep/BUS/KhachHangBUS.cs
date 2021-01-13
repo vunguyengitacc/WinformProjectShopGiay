@@ -33,8 +33,7 @@ namespace ShopGiayDep.BUS
         {
             return KhachHangDAL.delete(text);
         }
-
-        internal static void bindingDataGridView(DataGridView dgvThongTinKH)
+        internal static void bindingDataGridView(DataGridView dgvThongTinKH, List<KhachHangDAL> lstKhachHang)
         {
             DataTable table = new DataTable();
             table.Columns.Add("Mã Khách Hàng", typeof(string));
@@ -42,8 +41,11 @@ namespace ShopGiayDep.BUS
             table.Columns.Add("Địa chỉ", typeof(string));
             table.Columns.Add("Ngày sinh", typeof(DateTime));
             table.Columns.Add("Số Điện Thoại", typeof(string));
-
-            List<KhachHangDAL> lstKhachHang = KhachHangDAL.getListKhachHang();
+            if (lstKhachHang.Count == 0)
+            {
+                dgvThongTinKH.DataSource = table;
+                return;
+            }
 
 
             foreach (KhachHangDAL item in lstKhachHang)
@@ -75,5 +77,30 @@ namespace ShopGiayDep.BUS
             return 0;//0 la cap nhat thanh cong
         }
 
+        internal static bool bindingDataGridView(DataGridView dgvThongTinKH, string maKH)
+        {
+            List<KhachHangDAL> lstKhachHang = new List<KhachHangDAL>();
+            if (maKH == "")
+            {
+                lstKhachHang = KhachHangDAL.getListKhachHang();
+                KhachHangBUS.bindingDataGridView(dgvThongTinKH, lstKhachHang);
+                return true;// true la tim thanh cong
+            }
+            else
+            {
+                KhachHangDAL hoaDon = KhachHangDAL.getKhackHang_MaKH(maKH);
+                if (hoaDon == null)
+                {
+                    KhachHangBUS.bindingDataGridView(dgvThongTinKH, lstKhachHang);
+                    return false;//false loi khong tim thay
+                }
+                else
+                {
+                    lstKhachHang.Add(hoaDon);
+                    KhachHangBUS.bindingDataGridView(dgvThongTinKH, lstKhachHang);
+                    return true;
+                }
+            }
+        }
     }
 }

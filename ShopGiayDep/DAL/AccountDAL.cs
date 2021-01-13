@@ -39,12 +39,17 @@ namespace ShopGiayDep.DAL
             return lstOutput;
         }
 
-        internal static AccountDAL getAccount(string text)
+        internal static AccountDAL getAccount_Username(string text)
         {
             return converFromModel(db.Accounts.FirstOrDefault(val => val.Username == text));
         }
 
-        internal static bool update(string text1, string text2, string text3, string text)
+        internal static AccountDAL getAccount_MaNV(string text)
+        {
+            return converFromModel(db.Accounts.FirstOrDefault(val => val.MaNV == text));
+        }
+
+        internal static bool update(string text1, string text2, string text3, int id)
         {
 
             Account temp = db.Accounts.FirstOrDefault(val => val.Username == text1);
@@ -55,7 +60,7 @@ namespace ShopGiayDep.DAL
             {
                 temp.Password = text2;
                 temp.MaNV = text3;
-                temp.ChucVu.TenCV = text;
+                temp.MaCV = "CV"+id;
                 db.SaveChanges();
                 return true;
             }
@@ -103,7 +108,7 @@ namespace ShopGiayDep.DAL
 
         internal static bool checkAccount(string v1, string v2)
         {
-            if (db.Accounts.FirstOrDefault(val => val.Username == v1 && val.Password == v2) != null)
+            if (db.Accounts.FirstOrDefault(val => val.Username == v1 && val.Password == v2 && val.TinhTrang !=0) != null)
                 return true;
             return false;
         }

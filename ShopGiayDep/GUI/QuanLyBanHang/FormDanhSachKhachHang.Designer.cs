@@ -34,7 +34,6 @@ namespace ShopGiayDep.GUI.QuanLyBanHang
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnlTitle = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnGetMaKHMoi = new System.Windows.Forms.Button();
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -48,6 +47,7 @@ namespace ShopGiayDep.GUI.QuanLyBanHang
             this.dgvThongTinKH = new System.Windows.Forms.DataGridView();
             this.btnSuaKH = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnTim = new System.Windows.Forms.Button();
             this.pnlTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThongTinKH)).BeginInit();
             this.panel2.SuspendLayout();
@@ -112,21 +112,6 @@ namespace ShopGiayDep.GUI.QuanLyBanHang
             this.label1.Size = new System.Drawing.Size(354, 36);
             this.label1.TabIndex = 0;
             this.label1.Text = "Danh Sách Khách Hàng";
-            // 
-            // btnGetMaKHMoi
-            // 
-            this.btnGetMaKHMoi.BackColor = System.Drawing.Color.Navy;
-            this.btnGetMaKHMoi.FlatAppearance.BorderSize = 0;
-            this.btnGetMaKHMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGetMaKHMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGetMaKHMoi.ForeColor = System.Drawing.Color.White;
-            this.btnGetMaKHMoi.Location = new System.Drawing.Point(286, 22);
-            this.btnGetMaKHMoi.Name = "btnGetMaKHMoi";
-            this.btnGetMaKHMoi.Size = new System.Drawing.Size(58, 26);
-            this.btnGetMaKHMoi.TabIndex = 58;
-            this.btnGetMaKHMoi.Text = "Auto";
-            this.btnGetMaKHMoi.UseVisualStyleBackColor = false;
-            this.btnGetMaKHMoi.Click += new System.EventHandler(this.btnGetMaKHMoi_Click);
             // 
             // dtpNgaySinh
             // 
@@ -260,7 +245,7 @@ namespace ShopGiayDep.GUI.QuanLyBanHang
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.OldLace;
-            this.panel2.Controls.Add(this.btnGetMaKHMoi);
+            this.panel2.Controls.Add(this.btnTim);
             this.panel2.Controls.Add(this.dtpNgaySinh);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
@@ -275,6 +260,21 @@ namespace ShopGiayDep.GUI.QuanLyBanHang
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(700, 162);
             this.panel2.TabIndex = 59;
+            // 
+            // btnTim
+            // 
+            this.btnTim.BackColor = System.Drawing.Color.Navy;
+            this.btnTim.FlatAppearance.BorderSize = 0;
+            this.btnTim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTim.ForeColor = System.Drawing.Color.White;
+            this.btnTim.Location = new System.Drawing.Point(286, 22);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(58, 26);
+            this.btnTim.TabIndex = 60;
+            this.btnTim.Text = "Tìm";
+            this.btnTim.UseVisualStyleBackColor = false;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // FormDanhSachKhachHang
             // 
@@ -308,7 +308,6 @@ namespace ShopGiayDep.GUI.QuanLyBanHang
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel pnlTitle;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnGetMaKHMoi;
         private System.Windows.Forms.DateTimePicker dtpNgaySinh;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -322,5 +321,6 @@ namespace ShopGiayDep.GUI.QuanLyBanHang
         private System.Windows.Forms.DataGridView dgvThongTinKH;
         private System.Windows.Forms.Button btnSuaKH;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnTim;
     }
 }

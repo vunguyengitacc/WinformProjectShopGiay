@@ -76,7 +76,11 @@ namespace ShopGiayDep.GUI.QuanLyBanHang
                 MessageBox.Show("Vui lòng thêm hóa đơn trước");
             else
             {
-                CTHDBUS.insert(txtMaHang.Text, txtSoLuong.Text, maHoaDon);
+                int check = CTHDBUS.insert(txtMaHang.Text, txtSoLuong.Text, maHoaDon);
+                if (check == 1)
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin","Lỗi nhập");
+                if (check == 2)
+                    MessageBox.Show("Vui lòng chỉ nhập số ở trường [Số Lượng]", "Lỗi Nhập");
                 CTHDBUS.bindingDataGridView(dgvThongTinChiTieTHD, maHoaDon);
                 if (dgvThongTinChiTieTHD.Rows.Count == 0)
                     btnXoaCTHD.BackColor = Color.Blue;
@@ -163,7 +167,7 @@ namespace ShopGiayDep.GUI.QuanLyBanHang
             if (btnKhachMoi.BackColor == Color.DarkBlue)
             {
                 FormNhapKhachHang temp = new FormNhapKhachHang();
-                temp.fillTxtBox(txtMaKH);
+                temp.delegateFillMaKH(txtMaKH);
                 temp.Show();
             }
         }

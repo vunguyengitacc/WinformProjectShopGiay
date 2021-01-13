@@ -47,6 +47,7 @@ namespace ShopGiayDep.GUI.Admin
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.dgvThongTin = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnTimMaNV = new System.Windows.Forms.Button();
             this.pnlTitle.SuspendLayout();
             this.pnlHang2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -62,7 +63,7 @@ namespace ShopGiayDep.GUI.Admin
             this.btnKhoa.ForeColor = System.Drawing.Color.White;
             this.btnKhoa.Location = new System.Drawing.Point(35, 345);
             this.btnKhoa.Name = "btnKhoa";
-            this.btnKhoa.Size = new System.Drawing.Size(97, 31);
+            this.btnKhoa.Size = new System.Drawing.Size(129, 31);
             this.btnKhoa.TabIndex = 71;
             this.btnKhoa.Text = "Khóa";
             this.btnKhoa.UseVisualStyleBackColor = false;
@@ -96,9 +97,9 @@ namespace ShopGiayDep.GUI.Admin
             this.btnTim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTim.ForeColor = System.Drawing.Color.White;
-            this.btnTim.Location = new System.Drawing.Point(386, 345);
+            this.btnTim.Location = new System.Drawing.Point(374, 19);
             this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(97, 31);
+            this.btnTim.Size = new System.Drawing.Size(48, 26);
             this.btnTim.TabIndex = 65;
             this.btnTim.Text = "Tìm";
             this.btnTim.UseVisualStyleBackColor = false;
@@ -111,9 +112,9 @@ namespace ShopGiayDep.GUI.Admin
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(271, 345);
+            this.btnDelete.Location = new System.Drawing.Point(354, 345);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(97, 31);
+            this.btnDelete.Size = new System.Drawing.Size(129, 31);
             this.btnDelete.TabIndex = 67;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -126,11 +127,11 @@ namespace ShopGiayDep.GUI.Admin
             this.btnUpadate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpadate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpadate.ForeColor = System.Drawing.Color.White;
-            this.btnUpadate.Location = new System.Drawing.Point(151, 345);
+            this.btnUpadate.Location = new System.Drawing.Point(204, 345);
             this.btnUpadate.Name = "btnUpadate";
-            this.btnUpadate.Size = new System.Drawing.Size(97, 31);
+            this.btnUpadate.Size = new System.Drawing.Size(129, 31);
             this.btnUpadate.TabIndex = 66;
-            this.btnUpadate.Text = "Sửa";
+            this.btnUpadate.Text = "Cập Nhật";
             this.btnUpadate.UseVisualStyleBackColor = false;
             this.btnUpadate.Click += new System.EventHandler(this.btnUpadate_Click);
             // 
@@ -161,6 +162,7 @@ namespace ShopGiayDep.GUI.Admin
             this.pnlHang2.BackColor = System.Drawing.Color.OldLace;
             this.pnlHang2.Controls.Add(this.lblThuongHieu);
             this.pnlHang2.Controls.Add(this.label4);
+            this.pnlHang2.Controls.Add(this.btnTim);
             this.pnlHang2.Controls.Add(this.txtPassword);
             this.pnlHang2.Controls.Add(this.txtUsername);
             this.pnlHang2.Location = new System.Drawing.Point(35, 70);
@@ -187,6 +189,7 @@ namespace ShopGiayDep.GUI.Admin
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.OldLace;
+            this.panel3.Controls.Add(this.btnTimMaNV);
             this.panel3.Controls.Add(this.cmbChucVu);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label6);
@@ -262,6 +265,21 @@ namespace ShopGiayDep.GUI.Admin
             this.panel2.Size = new System.Drawing.Size(747, 39);
             this.panel2.TabIndex = 64;
             // 
+            // btnTimMaNV
+            // 
+            this.btnTimMaNV.BackColor = System.Drawing.Color.DarkBlue;
+            this.btnTimMaNV.FlatAppearance.BorderSize = 0;
+            this.btnTimMaNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTimMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimMaNV.ForeColor = System.Drawing.Color.White;
+            this.btnTimMaNV.Location = new System.Drawing.Point(374, 25);
+            this.btnTimMaNV.Name = "btnTimMaNV";
+            this.btnTimMaNV.Size = new System.Drawing.Size(48, 26);
+            this.btnTimMaNV.TabIndex = 66;
+            this.btnTimMaNV.Text = "Tìm";
+            this.btnTimMaNV.UseVisualStyleBackColor = false;
+            this.btnTimMaNV.Click += new System.EventHandler(this.btnTimMaNV_Click);
+            // 
             // FormQuanLyTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -271,7 +289,6 @@ namespace ShopGiayDep.GUI.Admin
             this.ClientSize = new System.Drawing.Size(764, 511);
             this.Controls.Add(this.btnKhoa);
             this.Controls.Add(this.pnlTitle);
-            this.Controls.Add(this.btnTim);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpadate);
             this.Controls.Add(this.pnlHang2);
@@ -311,5 +328,6 @@ namespace ShopGiayDep.GUI.Admin
         private System.Windows.Forms.TextBox txtMaNV;
         private System.Windows.Forms.DataGridView dgvThongTin;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnTimMaNV;
     }
 }

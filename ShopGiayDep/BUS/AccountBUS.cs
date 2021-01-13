@@ -44,7 +44,7 @@ namespace ShopGiayDep.BUS
 
         internal static bool checkAccount(string text)
         {
-            if (AccountDAL.getAccount(text) != null)
+            if (AccountDAL.getAccount_Username(text) != null)
                 return true;
             else
                 return false;
@@ -58,6 +58,8 @@ namespace ShopGiayDep.BUS
 
         internal static int insert(string username, string pass, string passXacNhan, string maNV, int chucvu)
         {
+            if (pass.IndexOf(' ') != -1 || username.IndexOf(' ') != -1)
+                return 3;// 3 la loi nhap khoang trang
             if (pass != passXacNhan)
                 return 1;//1 la xac thuc mat khau khong dung
             if (NhanVienDAL.getNhanVien_Ma(maNV) == null)
@@ -105,11 +107,11 @@ namespace ShopGiayDep.BUS
             dgvThongTin.DataSource = table;
         }
 
-        internal static int update(TextBox txtUsername, TextBox txtPassword, TextBox txtMaNV, string text)
+        internal static int update(TextBox txtUsername, TextBox txtPassword, TextBox txtMaNV, int id)
         {
             if (NhanVienDAL.getNhanVien_Ma(txtMaNV.Text) == null)
                 return 1;//1 la khong ton tai nhan vien 
-            if (AccountDAL.update(txtUsername.Text, txtPassword.Text, txtMaNV.Text, text))
+            if (AccountDAL.update(txtUsername.Text, txtPassword.Text, txtMaNV.Text, id))
                 return 0;//cap nhat thanh cong
             else
                 return 2; // khong tim thay tai khoan
@@ -117,7 +119,7 @@ namespace ShopGiayDep.BUS
 
         internal static bool update_TinhTrang(TextBox txtUsername)
         {
-            if (AccountDAL.getAccount(txtUsername.Text) != null)
+            if (AccountDAL.getAccount_Username(txtUsername.Text) != null)
             {
                 AccountDAL.update_TinhTrang(txtUsername.Text);
                 return true;
@@ -126,29 +128,18 @@ namespace ShopGiayDep.BUS
                 return false;
         }
 
-        internal static void find(TextBox txtUsername, TextBox txtMaNV, DataGridView dgvThongTin)
+        internal static void find(TextBox txtBox, DataGridView dgvThongTin,int choice)
         {
-            if (txtMaNV.Text == "" && txtUsername.Text == "")
-            {
-                AccountBUS.bindingDataGridView(dgvThongTin);
-                return;
-            }
-            if (txtMaNV.Text == "")
-            {
-                AccountBUS.bindingDataGridView(dgvThongTin, AccountDAL.getAccount(txtUsername.Text));
-                return;//
-            }
-            else if (txtUsername.Text == "")
-            {
-                AccountBUS.bindingDataGridView(dgvThongTin, AccountDAL.getListAccount_MaNV(txtMaNV.Text));
-                return;//
-            }
-
+            if (choice == 1)
+                AccountBUS.bindingDataGridView(dgvThongTin, AccountDAL.getAccount_Username(txtBox.Text));
+            else
+                AccountBUS.bindingDataGridView(dgvThongTin, AccountDAL.getAccount_MaNV(txtBox.Text));
         }
+
 
         internal static AccountBUS getAccount(string user)
         {
-            return converFromModel(AccountDAL.getAccount(user));
+            return converFromModel(AccountDAL.getAccount_Username(user));
         }
 
         internal static bool delete(TextBox txtUsername)

@@ -16,11 +16,14 @@ namespace ShopGiayDep.GUI.QuanLyBanHang
         public FormDanhSachKhachHang()
         {
             InitializeComponent();
-            KhachHangBUS.bindingDataGridView(dgvThongTinKH);
+            KhachHangBUS.bindingDataGridView(dgvThongTinKH, "");
         }
 
         private void btnXoaKH_Click(object sender, EventArgs e)
         {
+
+            if (btnXoaKH.BackColor == Color.Blue)
+                return;
             int result = KhachHangBUS.delete(txtMaKH.Text);
             if (result == 1)
             {
@@ -33,7 +36,7 @@ namespace ShopGiayDep.GUI.QuanLyBanHang
                 return;
             }     
             MessageBox.Show("Xóa thành công", "Thông Báo");
-            KhachHangBUS.bindingDataGridView(dgvThongTinKH);
+            KhachHangBUS.bindingDataGridView(dgvThongTinKH, "");
         }
 
         private void dgvThongTinKH_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -49,6 +52,8 @@ namespace ShopGiayDep.GUI.QuanLyBanHang
 
         private void btnSuaKH_Click(object sender, EventArgs e)
         {
+            if (btnSuaKH.BackColor == Color.Blue)
+                return;
             int result = KhachHangBUS.update(txtMaKH.Text, txtTenKH.Text, txtDiaChi.Text, dtpNgaySinh.Value, txtSDT.Text);
             if (result == 1)
                 MessageBox.Show("Không tìm thấy thông tin!\nHãy thử lại", "Lỗi nhập");
@@ -58,11 +63,20 @@ namespace ShopGiayDep.GUI.QuanLyBanHang
                 MessageBox.Show("Không được nhập sai định dạng số điện thoại", "Lỗi nhập");
             else if (result == 0)
                 MessageBox.Show("Cập nhật thành công", "Thông báo");
-            KhachHangBUS.bindingDataGridView(dgvThongTinKH);
+            KhachHangBUS.bindingDataGridView(dgvThongTinKH, "");
         }
 
         private void btnThemKH_Click(object sender, EventArgs e)
         {
+            if(btnThemKH.Text=="Thêm")
+            {
+                KhachHangBUS.getMaKHMoi(txtMaKH);
+                btnSuaKH.BackColor = Color.Blue;
+                btnXoaKH.BackColor = Color.Blue;
+                btnTim.BackColor = Color.Blue;
+                btnThemKH.Text = "Xác Nhận Thêm";
+                return;
+            }
             int result = KhachHangBUS.insert(txtMaKH.Text, txtTenKH.Text, txtDiaChi.Text, dtpNgaySinh.Value, txtSDT.Text);
             if (result == 1)
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Lỗi nhập");
@@ -72,12 +86,20 @@ namespace ShopGiayDep.GUI.QuanLyBanHang
                 MessageBox.Show("Khách hàng đã tồn tại", "Lỗi nhập");
             else
                 MessageBox.Show("Thêm thành công", "Thông báo");
-            KhachHangBUS.bindingDataGridView(dgvThongTinKH);
+            KhachHangBUS.bindingDataGridView(dgvThongTinKH, "");
+            btnTim.BackColor = Color.DarkBlue;
+            btnXoaKH.BackColor = Color.DarkBlue;
+            btnSuaKH.BackColor = Color.DarkBlue;
+            btnThemKH.Text = "Thêm";
         }
 
-        private void btnGetMaKHMoi_Click(object sender, EventArgs e)
+
+        private void btnTim_Click(object sender, EventArgs e)
         {
-            KhachHangBUS.getMaKHMoi(txtMaKH);
+            if (btnTim.BackColor == Color.Blue)
+                return;
+            if (!KhachHangBUS.bindingDataGridView(dgvThongTinKH, txtMaKH.Text))
+                MessageBox.Show("Không tìm thấy khách hàng", "Lỗi");
         }
     }
 }

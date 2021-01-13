@@ -102,7 +102,7 @@ namespace ShopGiayDep.GUI.QuanLyBanHang
             this.panel3.BackColor = System.Drawing.Color.OldLace;
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.txtGhiChu);
-            this.panel3.Location = new System.Drawing.Point(383, 68);
+            this.panel3.Location = new System.Drawing.Point(403, 68);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(349, 166);
             this.panel3.TabIndex = 74;
@@ -124,7 +124,7 @@ namespace ShopGiayDep.GUI.QuanLyBanHang
             this.btnThemBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemBill.ForeColor = System.Drawing.Color.White;
-            this.btnThemBill.Location = new System.Drawing.Point(34, 240);
+            this.btnThemBill.Location = new System.Drawing.Point(35, 240);
             this.btnThemBill.Name = "btnThemBill";
             this.btnThemBill.Size = new System.Drawing.Size(317, 34);
             this.btnThemBill.TabIndex = 64;
@@ -157,7 +157,7 @@ namespace ShopGiayDep.GUI.QuanLyBanHang
             this.dgvThongTinChiTieTHD.BackgroundColor = System.Drawing.Color.White;
             this.dgvThongTinChiTieTHD.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvThongTinChiTieTHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvThongTinChiTieTHD.Location = new System.Drawing.Point(34, 536);
+            this.dgvThongTinChiTieTHD.Location = new System.Drawing.Point(35, 536);
             this.dgvThongTinChiTieTHD.Name = "dgvThongTinChiTieTHD";
             this.dgvThongTinChiTieTHD.ReadOnly = true;
             this.dgvThongTinChiTieTHD.RowHeadersWidth = 51;
@@ -185,7 +185,7 @@ namespace ShopGiayDep.GUI.QuanLyBanHang
             this.btnKhachMoi.ForeColor = System.Drawing.Color.White;
             this.btnKhachMoi.Location = new System.Drawing.Point(163, 131);
             this.btnKhachMoi.Name = "btnKhachMoi";
-            this.btnKhachMoi.Size = new System.Drawing.Size(133, 23);
+            this.btnKhachMoi.Size = new System.Drawing.Size(164, 23);
             this.btnKhachMoi.TabIndex = 41;
             this.btnKhachMoi.Text = "Khách Mới";
             this.btnKhachMoi.UseVisualStyleBackColor = false;
@@ -208,7 +208,7 @@ namespace ShopGiayDep.GUI.QuanLyBanHang
             this.txtMaNV.Location = new System.Drawing.Point(163, 60);
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.ReadOnly = true;
-            this.txtMaNV.Size = new System.Drawing.Size(133, 26);
+            this.txtMaNV.Size = new System.Drawing.Size(164, 26);
             this.txtMaNV.TabIndex = 36;
             // 
             // label2
@@ -227,7 +227,7 @@ namespace ShopGiayDep.GUI.QuanLyBanHang
             this.txtSoLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoLuong.Location = new System.Drawing.Point(163, 77);
             this.txtSoLuong.Name = "txtSoLuong";
-            this.txtSoLuong.Size = new System.Drawing.Size(251, 26);
+            this.txtSoLuong.Size = new System.Drawing.Size(286, 26);
             this.txtSoLuong.TabIndex = 30;
             this.txtSoLuong.TextChanged += new System.EventHandler(this.txtSoLuong_TextChanged);
             // 
@@ -258,7 +258,7 @@ namespace ShopGiayDep.GUI.QuanLyBanHang
             this.txtMaKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaKH.Location = new System.Drawing.Point(163, 101);
             this.txtMaKH.Name = "txtMaKH";
-            this.txtMaKH.Size = new System.Drawing.Size(133, 26);
+            this.txtMaKH.Size = new System.Drawing.Size(164, 26);
             this.txtMaKH.TabIndex = 34;
             // 
             // txtMaHD
@@ -267,7 +267,7 @@ namespace ShopGiayDep.GUI.QuanLyBanHang
             this.txtMaHD.Location = new System.Drawing.Point(163, 16);
             this.txtMaHD.Name = "txtMaHD";
             this.txtMaHD.ReadOnly = true;
-            this.txtMaHD.Size = new System.Drawing.Size(133, 26);
+            this.txtMaHD.Size = new System.Drawing.Size(164, 26);
             this.txtMaHD.TabIndex = 34;
             // 
             // label3
@@ -286,7 +286,7 @@ namespace ShopGiayDep.GUI.QuanLyBanHang
             this.txtGiaTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGiaTien.Location = new System.Drawing.Point(163, 124);
             this.txtGiaTien.Name = "txtGiaTien";
-            this.txtGiaTien.Size = new System.Drawing.Size(251, 26);
+            this.txtGiaTien.Size = new System.Drawing.Size(286, 26);
             this.txtGiaTien.TabIndex = 32;
             // 
             // btnThemCTHD
@@ -296,7 +296,7 @@ namespace ShopGiayDep.GUI.QuanLyBanHang
             this.btnThemCTHD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemCTHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemCTHD.ForeColor = System.Drawing.Color.White;
-            this.btnThemCTHD.Location = new System.Drawing.Point(34, 481);
+            this.btnThemCTHD.Location = new System.Drawing.Point(35, 481);
             this.btnThemCTHD.Name = "btnThemCTHD";
             this.btnThemCTHD.Size = new System.Drawing.Size(204, 34);
             this.btnThemCTHD.TabIndex = 71;
@@ -313,9 +313,9 @@ namespace ShopGiayDep.GUI.QuanLyBanHang
             this.pnlMatHang.Controls.Add(this.txtSoLuong);
             this.pnlMatHang.Controls.Add(this.label6);
             this.pnlMatHang.Controls.Add(this.txtMaHang);
-            this.pnlMatHang.Location = new System.Drawing.Point(34, 299);
+            this.pnlMatHang.Location = new System.Drawing.Point(35, 299);
             this.pnlMatHang.Name = "pnlMatHang";
-            this.pnlMatHang.Size = new System.Drawing.Size(438, 176);
+            this.pnlMatHang.Size = new System.Drawing.Size(463, 176);
             this.pnlMatHang.TabIndex = 69;
             // 
             // label6
@@ -334,7 +334,7 @@ namespace ShopGiayDep.GUI.QuanLyBanHang
             this.txtMaHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaHang.Location = new System.Drawing.Point(163, 27);
             this.txtMaHang.Name = "txtMaHang";
-            this.txtMaHang.Size = new System.Drawing.Size(251, 26);
+            this.txtMaHang.Size = new System.Drawing.Size(286, 26);
             this.txtMaHang.TabIndex = 28;
             this.txtMaHang.TextChanged += new System.EventHandler(this.txtMaHang_TextChanged);
             // 
@@ -386,7 +386,7 @@ namespace ShopGiayDep.GUI.QuanLyBanHang
             this.pnlKhachHang.Controls.Add(this.txtMaHD);
             this.pnlKhachHang.Location = new System.Drawing.Point(35, 68);
             this.pnlKhachHang.Name = "pnlKhachHang";
-            this.pnlKhachHang.Size = new System.Drawing.Size(317, 166);
+            this.pnlKhachHang.Size = new System.Drawing.Size(348, 166);
             this.pnlKhachHang.TabIndex = 67;
             // 
             // button1
@@ -397,7 +397,7 @@ namespace ShopGiayDep.GUI.QuanLyBanHang
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = global::ShopGiayDep.Properties.Resources._4;
-            this.button1.Location = new System.Drawing.Point(496, 299);
+            this.button1.Location = new System.Drawing.Point(516, 299);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(236, 176);
             this.button1.TabIndex = 75;

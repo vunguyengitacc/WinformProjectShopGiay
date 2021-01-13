@@ -1,24 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ShopGiayDep.BUS;
+using System;
 using System.Windows.Forms;
-using ShopGiayDep.BUS;
 
 namespace ShopGiayDep.GUI.Admin
 {
+
     public partial class FormQuanLyTaiKhoan : Form
     {
-        public FormQuanLyTaiKhoan()
+        public FormQuanLyTaiKhoan(string text)
         {
             InitializeComponent();
             AccountBUS.bindingDataGridView(dgvThongTin);
             ChucVuBUS.fillingComboBox(cmbChucVu);
+            session = AccountBUS.getAccount(text);
         }
+
+        AccountBUS session;
+        public FormQuanLyTaiKhoan()
+        {
+            InitializeComponent();
+        }
+
 
         private void btnKhoa_Click(object sender, EventArgs e)
         {
@@ -37,7 +39,7 @@ namespace ShopGiayDep.GUI.Admin
 
         private void btnTim_Click(object sender, EventArgs e)
         {
-            AccountBUS.find(txtUsername, txtMaNV, dgvThongTin);
+            AccountBUS.find(txtUsername, dgvThongTin,1);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -50,9 +52,8 @@ namespace ShopGiayDep.GUI.Admin
         }
 
         private void btnUpadate_Click(object sender, EventArgs e)
-        {
-
-            int result = AccountBUS.update(txtUsername, txtPassword, txtMaNV, cmbChucVu.Text);
+        { 
+            int result = AccountBUS.update(txtUsername, txtPassword, txtMaNV, cmbChucVu.SelectedIndex);
             if (result == 2)
                 MessageBox.Show("Không tìm thấy tài khoản", "Lỗi Nhập");
             if (result == 1)
@@ -60,6 +61,11 @@ namespace ShopGiayDep.GUI.Admin
             else if (result == 0)
                 MessageBox.Show("Cập nhật thành công", "Thông báo");
             AccountBUS.bindingDataGridView(dgvThongTin);
+            if (session.Username == txtUsername.Text)
+            {
+                MessageBox.Show("Bạn vừa thay đổi thông tin tài khoản của chính bạn!\nVui lòng đăng nhập lại", "Xác Nhận");
+                this.Hide();
+            }
         }
 
         private void dgvThongTin_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -78,6 +84,11 @@ namespace ShopGiayDep.GUI.Admin
             {
                 btnKhoa.Text = "Mở Khoá";
             }
+        }
+
+        private void btnTimMaNV_Click(object sender, EventArgs e)
+        {
+            AccountBUS.find(txtMaNV, dgvThongTin,2);
         }
     }
 }

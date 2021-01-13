@@ -43,6 +43,8 @@ namespace ShopGiayDep.GUI.Admin
                 MessageBox.Show("Mã xác thực mật khẩu không chính xác", "Lỗi Nhập");
             else if (result == 2)
                 MessageBox.Show("Nhân viên không tồn tại, hãy tạo mới trước khi thêm tài khoản", "Lỗi Nhập");
+            else if (result == 3)
+                MessageBox.Show("Không được viết khoảng trắng vào tài khoản hoặc mật khẩu");
             else if (result == 0)
             {
                 MessageBox.Show("Thêm thành công", "Thông Báo");

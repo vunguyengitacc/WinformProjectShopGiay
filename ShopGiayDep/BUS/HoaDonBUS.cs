@@ -25,7 +25,9 @@ namespace ShopGiayDep.BUS
             return true;
         }
 
-        internal static void bindingDataGridView(DataGridView dgvThongTinHoaDon)
+
+
+        internal static void bindingDataGridView(DataGridView dgvThongTinHoaDon, List<HoaDonDAL> lstHoaDon)
         {
             DataTable table = new DataTable();
             table.Columns.Add("Mã Hóa Đơn", typeof(string));
@@ -35,7 +37,11 @@ namespace ShopGiayDep.BUS
             table.Columns.Add("Tên Nhân Viên", typeof(string));
             table.Columns.Add("Ngày Lập", typeof(DateTime));
             table.Columns.Add("Tổng giá trị", typeof(decimal));
-            List<HoaDonDAL> lstHoaDon = HoaDonDAL.getListHoaDon();
+            if(lstHoaDon.Count==0)
+            {
+                dgvThongTinHoaDon.DataSource = table;
+                return;
+            }    
             List<CTHDDAL> lstCTHD = CTHDDAL.getListCTHD();
             List<NhanVienDAL> lstNhanVien = NhanVienDAL.getListNhanVien();
             List<KhachHangDAL> lstKhachHang = KhachHangDAL.getListKhachHang();
@@ -84,5 +90,31 @@ namespace ShopGiayDep.BUS
             txtTongTien.Text = HoaDonDAL.getTongTien(maHoaDon).ToString();
         }
 
+        internal static bool bindingDataGridView(DataGridView dgvThongTinChiTietHD, string maHD)
+        {
+
+            List<HoaDonDAL> lstHoaDon = new List<HoaDonDAL>();
+            if (maHD == "")
+            {
+                lstHoaDon = HoaDonDAL.getListHoaDon();
+                HoaDonBUS.bindingDataGridView(dgvThongTinChiTietHD, lstHoaDon);
+                return true;// true la tim thanh cong
+            }
+            else
+            {
+                HoaDonDAL hoaDon = HoaDonDAL.getHoaDon(maHD);
+                if (hoaDon == null)
+                {
+                    HoaDonBUS.bindingDataGridView(dgvThongTinChiTietHD, lstHoaDon);
+                    return false;//false loi khong tim thay
+                }    
+                else
+                {
+                    lstHoaDon.Add(hoaDon);
+                    HoaDonBUS.bindingDataGridView(dgvThongTinChiTietHD, lstHoaDon);
+                    return true;
+                }    
+            }
+        }
     }
 }

@@ -25,5 +25,33 @@ namespace ShopGiayDep.DAL
             return lstResult;
         }
 
+        internal static bool insert(string text)
+        {
+            if (db.ThuongHieux.FirstOrDefault(val => val.TenTH == text)!=null)
+                return false;
+            int id = 0;
+            string check = "";
+            while (true)
+            {
+                check = "TH" + id;
+                if (db.ThuongHieux.FirstOrDefault(val => val.MaTH == check) == null)
+                    break;
+                id++;
+            }
+            ThuongHieu temp = new ThuongHieu() { MaTH = "TH" + id, TenTH = text };
+            db.ThuongHieux.Add(temp);
+            db.SaveChanges();
+            return true;
+        }
+
+        internal static void init()
+        {
+            if(db.ThuongHieux.ToList().Count==0)
+            {
+                ThuongHieu temp = new ThuongHieu() { MaTH = "TH0", TenTH = "Chưa Xác Định" };
+                db.ThuongHieux.Add(temp);
+                db.SaveChanges();
+            }    
+        }
     }
 }

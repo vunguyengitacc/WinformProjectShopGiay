@@ -16,5 +16,10 @@ namespace ShopGiayDep.BUS
             cmbChucVu.DisplayMember = "TenCV";
             cmbChucVu.ValueMember = "MaCV";
         }
+
+        internal static void init()
+        {
+            ChucVuDAL.init();
+        }
     }
 }
